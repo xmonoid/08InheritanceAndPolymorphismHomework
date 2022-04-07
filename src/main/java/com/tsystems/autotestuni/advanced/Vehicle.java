@@ -28,13 +28,14 @@ public abstract class Vehicle {
 
     @Override
     public boolean equals(Object o) {
-        // FIXME: Change this calling to proper implementation
-        return super.equals(o);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vehicle vehicle = (Vehicle) o;
+        return numberOfWheels == vehicle.numberOfWheels && vin.equals(vehicle.vin);
     }
 
     @Override
     public int hashCode() {
-        // FIXME: Change this calling to proper implementation
-        return super.hashCode();
+        return Objects.hash(license, vin, numberOfWheels);
     }
 }

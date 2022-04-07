@@ -10,8 +10,13 @@ public class InhAndPolyBasic {
      *
      */
     public static int reverse(int number) {
-        // FIXME: Implement code here
-        throw new UnsupportedOperationException("Not implemented yet");
+        int result = 0;
+        while (number != 0) {
+            result *= 10;
+            result += number % 10;
+            number /= 10;
+        }
+        return result;
     }
 
     /**
@@ -21,7 +26,10 @@ public class InhAndPolyBasic {
      *
      */
     public static char[] reverse(char[] chars) {
-        // FIXME: Implement code here
-        throw new UnsupportedOperationException("Not implemented yet");
+        char[] result = new char[chars.length];
+        for (int i = 0; i < chars.length; i++) {
+            result[i] = chars[chars.length - i - 1];
+        }
+        return result;
     }
 }
